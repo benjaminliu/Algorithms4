@@ -7,7 +7,11 @@ public class Insertion extends SortBase {
     @Override
     public void sort(Comparable[] arr) {
         int len = arr.length;
-        for (int i = 1; i < len; i++) {
+        sort(arr, 0, len - 1);
+    }
+
+    public void sort(Comparable[] arr, int lo, int hi) {
+        for (int i = lo + 1; i <= hi; i++) {
             for (int j = i; j > 0 && less(arr[j], arr[j - 1]); j--) {
                 exch(arr, j, j - 1);
             }
